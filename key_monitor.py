@@ -3,7 +3,7 @@ from pynput import keyboard
 
 logger = logging.getLogger(__name__)
 logger.setLevel(level=logging.INFO)
-handler = logging.FileHandler('output.log')
+handler = logging.FileHandler('output.log', "a+")
 formatter = logging.Formatter('%(asctime)s %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
