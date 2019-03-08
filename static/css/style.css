@@ -1,0 +1,193 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Ubuntu', Arial, sans-serif;
+}
+
+h2 {
+    font-weight: lighter;
+    margin-bottom: 2rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background: transparent;
+    border: 0.2rem solid #000;
+    font-weight: bold;
+    min-height: 4em;
+    min-width: 15em;
+    margin: 1rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button, .key {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.keyboard {
+    width: 58em;
+    height: 19.5em;
+    padding: 0.25rem 0.5rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #cac394;
+}
+
+.keyboard .key {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    float: left;
+    margin: 0.3rem;
+    margin-bottom: 0.375rem;
+    color: #FFF;
+    box-shadow: 0 1px 0 #000;
+    background: #212121;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 0.8rem;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.half-key {
+    width: 1.25rem;
+    height: 2.5rem;
+    display: block;
+    float: left;
+    margin: 0.15rem;
+    margin-bottom: 0.375rem;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding-top: 0.8rem;
+    opacity: 0;
+}
+
+.little-key {
+    width: 0.9rem;
+    height: 2.5rem;
+    display: block;
+    float: left;
+    margin: 0.15rem;
+    margin-bottom: 0.375rem;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding-top: 0.8rem;
+    opacity: 0;
+}
+
+.special-key {
+    font-size: 0.5em;
+}
+
+.keyboard .key-function {
+    padding-top: 4px;
+    width: 42px;
+    height: 20px;
+    font-size: 0.9em;
+}
+
+figure.keyboard .key-size-2 {
+    width: 4.0rem;
+}
+
+figure.keyboard .key-size-3 {
+    width: 80px;
+}
+
+figure.keyboard .key-size-4 {
+    width: 5.5rem;
+}
+
+figure.keyboard .key-size-5 {
+    width: 6.1rem;
+}
+
+figure.keyboard .key-size-6 {
+    width: 8.1rem;
+}
+
+figure.keyboard .key-size-7 {
+    width: 18.5rem;
+}
+
+figure.keyboard .key-size-8 {
+    width: 3.3rem;
+}
+/* STYLES */
+
+figure.keyboard .key-small-type {
+    font-size: 0.5em;
+    line-height: 40px;
+    vertical-align: bottom;
+    text-align: left;
+    padding-left: 0.4em;
+}
+
+figure.keyboard .key-is-active {
+    font-size: 1em;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+figure.keyboard .key-small-type.key-is-active {
+    padding: 0;
+}
+
+figure.keyboard .key-small-type.key-right {
+    text-align: right;
+    padding-right: 0.4em;
+}
+
+figure.keyboard .key-function.key-small-type {
+    font-size: 0.7em;
+    padding-right: 2px;
+    padding-top: 2px;
+    text-align: center;
+    line-height: 18px;
+}
+
+figure.keyboard .key-function.key-small-type.key-right {
+    font-size: 8px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.ubuntu-logo {
+    position: relative;
+}
+
+.ubuntu-logo::before {
+    content: '';
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0uODY2IC0uODY2IDE5Ny4zMTUgMjA0Ljc3MjkiPiAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE4LjA1NyA4Mi42MDFjLTEwLjQ1MyAwLTE4LjkyMyA4LjQ3LTE4LjkyMyAxOC45MjMgMCAxMC40NDkgOC40NyAxOC45MiAxOC45MjMgMTguOTIgMTAuNDQ5IDAgMTguOTItOC40NzEgMTguOTItMTguOTIgMC0xMC40NTQtOC40Ny0xOC45MjMtMTguOTItMTguOTIzem0xMzUuMTEgODYuMDAyYy05LjA1MSA1LjIyNS0xMi4xNDkgMTYuNzkzLTYuOTI2IDI1Ljg0IDUuMjI2IDkuMDUxIDE2Ljc5MyAxMi4xNTEgMjUuODQ0IDYuOTI2IDkuMDQ4LTUuMjI0IDEyLjE0OC0xNi43OTIgNi45MjMtMjUuODQyLTUuMjI0LTkuMDQ3LTE2Ljc5My0xMi4xNDgtMjUuODQxLTYuOTI0em0tOTQuMDA1LTY3LjA4MmMwLTE4LjcwMSA5LjI5My0zNS4yMTkgMjMuNTA0LTQ1LjIyMWwtMTMuODQtMjMuMTcyYy0xNi41NiAxMS4wNjQtMjguODc4IDI3Ljk3OC0zMy45OTUgNDcuNzg4IDUuOTc3IDQuODcyIDkuNzk2IDEyLjI5MSA5Ljc5NiAyMC42MDggMCA4LjMxNS0zLjgxOSAxNS43MzQtOS43OTcgMjAuNjA1IDUuMTE2IDE5LjgxMiAxNy40MzUgMzYuNzI2IDMzLjk5NSA0Ny43ODlsMTMuODM1LTIzLjE3NWMtMTQuMjExLTEwLTIzLjUwNC0yNi41MTctMjMuNTA0LTQ1LjIyMXptNTUuMjc1LTU1LjI3NWMyOC44NzcgMCA1Mi41NjQgMjIuMTQxIDU1LjA0NyA1MC4zNzNsMjYuOTY4LS4zOTRjLTEuMzI3LTIwLjg0NC0xMC40MzItMzkuNTYyLTI0LjQyNS01My4zMTktNy4xOTQgMi43MTgtMTUuNTA1IDIuMzA2LTIyLjY4OC0xLjg0Mi03LjE5Mi00LjE1Mi0xMS43MDUtMTEuMTU2LTEyLjk0MS0xOC43NTctNi45OTItMS45MzUtMTQuMzUxLTIuOTktMjEuOTYtMi45OS0xMy4wODYgMC0yNS40NDkgMy4wNzItMzYuNDMxIDguNTEybDEzLjE0NiAyMy41NmM3LjA3Ny0zLjI5MyAxNC45NjMtNS4xNDMgMjMuMjg0LTUuMTQzem0wIDExMC41NWMtOC4zMjIgMC0xNi4yMDctMS44NS0yMy4yODUtNS4xNDNsLTEzLjE0OCAyMy41NjJjMTAuOTgzIDUuNDM4IDIzLjM0NyA4LjUxMSAzNi40MzMgOC41MTEgNy42MDkgMCAxNC45NjgtMS4wNTUgMjEuOTYxLTIuOTkgMS4yMzYtNy42MDEgNS43NS0xNC42MDUgMTIuOTQzLTE4Ljc2IDcuMTgzLTQuMTQ2IDE1LjQ5NC00LjU1OCAyMi42ODgtMS44MzkgMTMuOTkyLTEzLjc1OCAyMy4wOTctMzIuNDc2IDI0LjQyMi01My4zMmwtMjYuOTY4LS4zOTRjLTIuNDgxIDI4LjIzNi0yNi4xNjkgNTAuMzczLTU1LjA0NiA1MC4zNzN6bTM4LjcyNy0xMjIuMzZjOS4wNSA1LjIyNyAyMC42MTkgMi4xMjYgMjUuODQyLTYuOTIxIDUuMjI2LTkuMDUxIDIuMTI4LTIwLjYxOS02LjkyMy0yNS44NDUtOS4wNDktNS4yMjQtMjAuNjE3LTIuMTI0LTI1Ljg0MyA2LjkyNy01LjIyNCA5LjA0Ny0yLjEyNCAyMC42MTYgNi45MjQgMjUuODM5eiIvPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.key-is-active.ubuntu-logo::before {
+    display: none;
+}

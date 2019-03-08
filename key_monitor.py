@@ -8,17 +8,20 @@ formatter = logging.Formatter('%(asctime)s %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+
 def on_press(key):
     try:
         logger.info("{0} p".format(key.char))
     except AttributeError:
-       logger.info('{0} p'.format(key))
+        logger.info('{0} p'.format(key))
+
 
 def on_release(key):
     logger.info('{0} r'.format(key))
     # if key == keyboard.Key.esc:
     #     # Stop listener
     #     return False
+
 
 # Collect events until released
 with keyboard.Listener(
