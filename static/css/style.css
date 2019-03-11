@@ -23,10 +23,13 @@ button {
     min-height: 4em;
     min-width: 15em;
     margin: 1rem;
+    outline: none;
 }
 
 button:hover{
     cursor: pointer;
+    outline: none;
+    color: white;
 }
 
 button, .key {
