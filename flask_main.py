@@ -19,15 +19,21 @@ def index():
 
 @app.route("/keyboard_usage_data")
 def keyboard_usage_data():
+    cache_seconds = 100
     file_name = "data/cache.json"
-    if os.path.exists(file_name) and time.time() - os.stat(file_name).st_mtime <= 300:
+    if os.path.exists(file_name) and time.time() - os.stat(file_name).st_mtime <= cache_seconds:
         with open(file_name) as fd:
             res = ujson.load(fd)
     else:
         raw_data = get_raw_data()
-        daily_log_time = get_daily_log_time(raw_data)
-        daily_press_time = get_daily_total_press_time(raw_data)
-        res = {"daily_log_time": daily_log_time, "daily_press_time": daily_press_time}
+        daily_log_time_each_key, daily_log_time = get_daily_log_time(raw_data)
+        daily_press_time_each_key, daily_press_time = get_daily_total_press_time(raw_data)
+        res = {
+            "daily_log_time": daily_log_time,
+            "daily_log_time_each_key": daily_log_time_each_key,
+            "daily_press_time": daily_press_time,
+            "daily_press_time_each_key": daily_press_time_each_key
+        }
         with open(file_name, "w") as fd:
             ujson.dump(res, fd)
     return jsonify(res)

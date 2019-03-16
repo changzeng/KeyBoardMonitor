@@ -48,10 +48,13 @@ def cache(file_name, cache_time=300):
 # @cache("data/daily_log_time.json")
 def get_daily_log_time(raw_data):
     res = defaultdict(lambda : defaultdict(int))
+    daily_total_time = defaultdict(int)
     for item in raw_data:
         day, key = item[0], item[2]
         res[day][key] += 1
-    return res
+        daily_total_time[day] += 1
+    daily_total_time = sorted(daily_total_time.items(), key=lambda x: x[0])
+    return res, daily_total_time
 
 
 # @cache("data/daily_total_press_time.json")
@@ -77,12 +80,18 @@ def get_daily_total_press_time(raw_data):
                     res[day][key] += timesep
                     res[day][key] = round(res[day][key], 2)
                 press_dict[key] = -1
-    return res
+    total_press_time = []
+    for day, key_dict in sorted(res.items(), key=lambda x: x[0]):
+        tmp = 0
+        for key, press_time in key_dict.items():
+            tmp += press_time
+        total_press_time.append([day, round(tmp, 2)])
+    return res, total_press_time
 
 
 if __name__ == "__main__":
     raw_data = get_raw_data()
-    total_press_time = get_daily_total_press_time(raw_data)
+    total_press_time_each_key = get_daily_total_press_time(raw_data)
     # for day, day_usage in total_press_time.items():
     #     for key, total_time in sorted(day_usage.items(), key=lambda x:x[1], reverse=True):
     #         print(day, key, total_time)
