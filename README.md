@@ -2,6 +2,9 @@
 
 #### 项目说明
 
+
+![](https://raw.githubusercontent.com/changzeng/KeyBoardMonitor/master/img/preview.png)
+
 这是一个用于监测键盘使用情况的项目。主要分为两个模块。
 
 - 键盘监控模块
